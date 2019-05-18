@@ -2,6 +2,7 @@ const express = require('express');
 const morgan = require('morgan');
 const dotenv = require('dotenv');
 const bodyParser = require('body-parser');
+const expressValidator = require('express-validator');
 const mongoose = require('mongoose');
 dotenv.config();
 
@@ -21,6 +22,7 @@ const postRoutes = require('./routes/post');
 // Middlewares
 app.use(morgan("dev")); // See request and time for request
 app.use(bodyParser.json());
+app.use(expressValidator());
 
 // First route
 app.use('/', postRoutes); // postRoutes to middleware to controllers
