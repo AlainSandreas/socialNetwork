@@ -18,6 +18,7 @@
   "homepage": "https://github.com/AlainSandreas/socialNetwork#readme",
   "dependencies": {
     "express": "^4.17.0",
+    "morgan": "^1.9.1",
     "nodemon": "^1.19.0"
   }
 }
