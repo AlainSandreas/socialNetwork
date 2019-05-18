@@ -1,0 +1,23 @@
+{
+  "name": "socialnetwork",
+  "version": "1.0.0",
+  "description": "Creating a small social network from scratch",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlainSandreas/socialNetwork.git"
+  },
+  "author": "AlainSandreas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AlainSandreas/socialNetwork/issues"
+  },
+  "homepage": "https://github.com/AlainSandreas/socialNetwork#readme",
+  "dependencies": {
+    "express": "^4.17.0",
+    "nodemon": "^1.19.0"
+  }
+}
