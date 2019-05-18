@@ -1,8 +1,18 @@
 const express = require('express');
 const morgan = require('morgan');
+const dotenv = require('dotenv');
+const mongoose = require('mongoose');
+dotenv.config();
+
+
+mongoose.connect(process.env.MONGO_URI,
+  { 
+    useNewUrlParser: true 
+  })
+  .then(() =>  {console.log('MongoDB connected')})
+  .catch((err) => {console.log(err.message)})
 
 const app = express();
-const getPosts = require('./routes/post');
 
 // Bring in routes
 const postRoutes = require('./routes/post');
@@ -13,7 +23,7 @@ app.use(morgan("dev"));
 // First route
 app.use('/', postRoutes); // postRoutes to middleware to controllers
 
-const port = 5000;
+const port = process.env.PORT || 5000;
 app.listen(port, () => { 
   console.log('Listening on port ' + port);
  });
