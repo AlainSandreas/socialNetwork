@@ -1,12 +1,9 @@
 const Post = require('../models/Post');
 
 exports.getPosts = (req, res) => {
-  res.status(200).json({
-    posts: [
-      { title: 'Hello World!' },
-      { title: 'Second post' }
-    ]
-  })
+  const posts = Post.find().select('-__v')
+    .then((posts) => res.status(200).json({ post: posts }))
+    .catch(err => console.log(err));
 };
 
 exports.createPost = (req, res) => {
@@ -15,4 +12,4 @@ exports.createPost = (req, res) => {
   post.save().then(result => {
     res.status(200).json({ post: result });
   });
-}
+};
